@@ -1,0 +1,34 @@
+{% extends "base.html" %}{% block title %}HEAL-AS — AI Healthcare Screening{% endblock %}
+{% block content %}
+<section class="hero"><div class="hero-inner">
+  <div>
+    <span class="eyebrow">AI-ASSISTED HEALTHCARE PLATFORM</span>
+    <h1>HEAL-AS</h1>
+    <h2>Healthcare Evaluation and Analysis Autonomous System</h2>
+    <p>A college-level full-stack AI/ML platform that accepts selected patient inputs, runs the supplied machine-learning model and creates an automated medical-style report.</p>
+    <div class="actions">{% if session.get('user_id') %}<a class="btn" href="{{ url_for('dashboard') }}">Open Dashboard →</a>{% else %}<a class="btn" href="{{ url_for('register') }}">Get Started →</a><a class="btn ghost" href="{{ url_for('login') }}">Login</a>{% endif %}</div>
+  </div>
+  <aside class="hero-panel">
+    <div class="pulse"><span class="dot"></span> System architecture ready</div>
+    <div class="mini-flow">
+      <div class="flow-item"><span>01</span> Patient information</div>
+      <div class="flow-item"><span>02</span> Data validation & processing</div>
+      <div class="flow-item"><span>03</span> Supplied ML model</div>
+      <div class="flow-item"><span>04</span> Prediction + PDF report</div>
+    </div>
+  </aside>
+</div></section>
+<div class="notice"><strong>Medical disclaimer:</strong> HEAL-AS is an educational/AI-assisted screening system. Its output is a preliminary model prediction, not a confirmed diagnosis. Consult a qualified healthcare professional for medical decisions.</div>
+<section class="section container"><div class="sectionhead"><span>SUPPORTED ANALYSIS</span><h2>Choose a module</h2><p>Each model receives only the features required by that model.</p></div>
+<div class="cards">
+  <article class="card"><span class="tag">MODULE</span><div class="icon">T</div><h3>Typhoid</h3><p>Model integration is prepared, but prediction stays disabled until a fitted model is supplied.</p><a class="btn small" href="{{ url_for('typhoid') }}">View Module</a></article>
+  <article class="card"><span class="tag">ACTIVE</span><div class="icon">D</div><h3>Diabetes</h3><p>Five-feature screening form connected to the supplied decision-tree model.</p><a class="btn small" href="{{ url_for('diabetes') }}">Analyze Diabetes</a></article>
+  <article class="card"><span class="tag">ACTIVE</span><div class="icon">G</div><h3>Dengue</h3><p>Seven-feature screening form including the required RBC PANEL field.</p><a class="btn small" href="{{ url_for('dengue') }}">Analyze Dengue</a></article>
+  <article class="card muted"><span class="tag">COMING SOON</span><div class="icon">+</div><h3>Upcoming Disease</h3><p>Additional disease modules can be added after their validated models are supplied.</p><button class="btn small" disabled>Coming Soon</button></article>
+</div></section>
+<section class="section container split">
+  <div><span class="eyebrow">AI IMAGE ANALYSIS</span><h2>Fracture Detection</h2><p class="subtle">The interface supports X-ray upload and preview, while the actual prediction remains disabled because no fracture model has been supplied.</p><a class="btn" href="{{ url_for('image_analysis') }}">Open Image Analysis</a></div>
+  <div class="panel"><span class="eyebrow">HOW IT WORKS</span><h3>From input to report</h3><div class="workflow"><div>Patient Input → Validation</div><div>Validated Features → ML Model</div><div>Prediction → Interpretation</div><div>LaTeX Template → PDF Report</div></div></div>
+</section>
+<section class="section container"><div class="sectionhead"><span>PROJECT HIGHLIGHTS</span><h2>Built as a real full-stack project</h2></div><div class="features"><div class="feature">AI-assisted analysis</div><div class="feature">Automated PDF reports</div><div class="feature">Secure authentication</div><div class="feature">Prediction history</div></div></section>
+{% endblock %}

@@ -1,0 +1,107 @@
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1.6cm]{geometry}
+\usepackage{xcolor,tabularx,array,booktabs,tcolorbox,fancyhdr,enumitem}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\definecolor{HealBlue}{RGB}{20,95,150}
+\definecolor{HealLight}{RGB}{235,245,252}
+\definecolor{HealDark}{RGB}{25,45,60}
+\definecolor{HealRed}{RGB}{190,55,55}
+\definecolor{HealGreen}{RGB}{35,135,85}
+\definecolor{HealGray}{RGB}{90,100,110}
+\pagestyle{fancy}\fancyhf{}
+\lhead{\textbf{\color{HealBlue}HEAL-AS}}
+\rhead{\small Health Care Evaluation and Analysis Autonomous System}
+\cfoot{\small Page \thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+\newcommand{\sectiontitle}[1]{\vspace{8pt}\noindent\colorbox{HealBlue}{\parbox{\dimexpr\linewidth-2\fboxsep}{\color{white}\textbf{\large #1}}}\vspace{5pt}}
+\begin{document}
+\begin{center}
+{\Huge\textbf{\color{HealBlue}HEAL-AS}}\\[3pt]
+{\large\textbf{Health Care Evaluation and Analysis Autonomous System}}\\[3pt]
+{\small AI-Assisted Medical Evaluation Report}\\[6pt]
+\rule{\linewidth}{1pt}
+\end{center}
+\begin{tabularx}{\linewidth}{X X}
+\textbf{Report ID:} 20260911234425\_03E41A & \textbf{Report Date:} 11/09/2026\\
+\textbf{Report Type:} DIABETES Evaluation & \textbf{Model Version:} v1.0
+\end{tabularx}
+
+\sectiontitle{1. Patient Information}
+\begin{tabularx}{\linewidth}{|l|X|l|X|}
+\hline
+\textbf{Patient Name} & Ashish Gupta & \textbf{Patient ID} & USER-1 \\ \hline
+\textbf{Age} & 17 & \textbf{Sex} & Male \\ \hline
+\textbf{Contact} & 976876876876 & \textbf{Evaluation Date} & 11/09/2026 23:44 \\ \hline
+\textbf{Address} & \multicolumn{3}{l|}baliya kothi \\ \hline
+\end{tabularx}
+
+\sectiontitle{2. DIABETES Evaluation Inputs}
+\begin{tabularx}{\linewidth}{|X|X|X|}
+\hline
+\textbf{Parameter} & \textbf{Patient Input} & \textbf{Unit / Type}\\ \hline
+\textbf{Age} & 17 & years\\ \hline
+\textbf{BMI} & 24.0 & kg/m2\\ \hline
+\textbf{Blood Glucose} & 300.0 & mg/dL\\ \hline
+\textbf{Gender_Male} & True & True / False\\ \hline
+\textbf{Gender_Other} & False & True / False\\ \hline
+\end{tabularx}
+
+\sectiontitle{3. Disease Analysis}
+\begin{tcolorbox}[colback=HealLight,colframe=HealBlue,halign=center]
+{\Large\textbf{DIABETES}}\\[6pt]
+{\Large\textbf{AI PREDICTION: YES}}\\[5pt]
+Model Confidence: 100.00\%
+\end{tcolorbox}
+
+\sectiontitle{4. Result Interpretation}
+\begin{tabularx}{\linewidth}{|p{2cm}|X|}
+\hline
+\textbf{\color{HealRed}YES} & The model predicts the condition based on supplied input data. This is not a confirmed diagnosis.\\ \hline
+\textbf{\color{HealGreen}NO} & The model does not predict the condition from supplied input data. A negative prediction does not rule out illness.\\ \hline
+\end{tabularx}
+
+\sectiontitle{5. Precautions \& Recommendations}
+\begin{tcolorbox}[colback=white,colframe=HealRed]
+\begin{itemize}[leftmargin=1.2cm]
+\item Consult a qualified healthcare professional if the AI prediction is YES.
+\item Follow an individualized diet, activity, and monitoring plan from a healthcare professional.
+\item Do not change insulin or other medicines based only on this AI report.
+\item Seek medical advice for persistently abnormal glucose readings or concerning symptoms.
+\end{itemize}
+\end{tcolorbox}
+
+\textit{Diabetes status is normally established using appropriate laboratory testing and clinical assessment.}
+
+\sectiontitle{6. AI Model Information}
+\begin{tabularx}{\linewidth}{|l|X|}
+\hline \textbf{System} & HEAL-AS \\ \hline
+\textbf{Evaluation Method} & Machine-learning based screening / prediction \\ \hline
+\textbf{Input} & Patient-provided clinical and laboratory information \\ \hline
+\textbf{Output} & Disease prediction: YES / NO \\ \hline
+\textbf{Model Version} & v1.0 \\ \hline
+\end{tabularx}
+
+\sectiontitle{7. Medical Disclaimer}
+\begin{tcolorbox}[colback=HealLight,colframe=HealBlue]
+\textbf{Important:} HEAL-AS is an AI-assisted health evaluation system. Results are for informational and screening purposes only and are not a confirmed medical diagnosis. A qualified healthcare professional should consider symptoms, history, examination, and appropriate diagnostic tests. If the prediction is \textbf{YES}, please visit a qualified doctor for further evaluation. Do not start, stop, or change medication solely on the basis of this report.
+\end{tcolorbox}
+
+\sectiontitle{8. Medical Review / Verification}
+\begin{tabularx}{\linewidth}{|l|X|}
+\hline \textbf{Reviewed By} & \\[8pt] \hline
+\textbf{Professional Role} & \\[8pt] \hline
+\textbf{Date} & \\[8pt] \hline
+\textbf{Signature} & \\[8pt] \hline
+\textbf{Report Verification / QR Area} & [\hfill QR / VERIFICATION \hfill] \\[12pt] \hline
+\end{tabularx}
+
+\vfill
+\begin{center}
+\rule{\linewidth}{0.5pt}\\
+{\small\textbf{\color{HealBlue}HEAL-AS} \quad Health Care Evaluation and Analysis Autonomous System}\\
+{\scriptsize AI-assisted health evaluation — Not a substitute for professional medical advice}
+\end{center}
+\end{document}

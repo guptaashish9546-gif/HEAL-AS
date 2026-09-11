@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0f6b8f">
+  <meta name="description" content="HEAL-AS — Healthcare Evaluation and Analysis Autonomous System">
+  <title>{% block title %}HEAL-AS{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<nav class="nav">
+  <a class="brand" href="{{ url_for('index') }}"><span class="brandmark">H+</span> HEAL-AS</a>
+  <button class="navmenu" aria-label="Open navigation">☰</button>
+  <div class="navlinks">
+    <a href="{{ url_for('index') }}">Home</a>
+    {% if session.get('user_id') %}
+      <a href="{{ url_for('dashboard') }}">Dashboard</a>
+      <a href="{{ url_for('diabetes') }}">Diabetes</a>
+      <a href="{{ url_for('dengue') }}">Dengue</a>
+      <a href="{{ url_for('typhoid') }}">Typhoid</a>
+      <a href="{{ url_for('image_analysis') }}">Image Analysis</a>
+      <form method="post" action="{{ url_for('logout') }}"><button class="linkbtn">Logout</button></form>
+    {% else %}
+      <a href="{{ url_for('login') }}">Login</a>
+      <a class="navcta" href="{{ url_for('register') }}">Create Account</a>
+    {% endif %}
+  </div>
+</nav>
+<main>{% block content %}{% endblock %}</main>
+<footer>
+  <div class="footer-brand">HEAL-AS</div>
+  <div>Healthcare Evaluation and Analysis Autonomous System</div>
+  <p>Developed by AS Group · AI-assisted screening for educational use</p>
+  <small>HEAL-AS does not replace professional medical diagnosis or treatment.</small>
+</footer>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
