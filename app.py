@@ -10,6 +10,7 @@ from pathlib import Path
 
 import joblib
 import numpy as np
+import pandas as pd
 from flask import Flask, jsonify, redirect, render_template, request, send_file, session, url_for
 from werkzeug.security import check_password_hash, generate_password_hash
 
@@ -354,7 +355,7 @@ def api_diabetes():
             "BMI": bmi, "BLOOD_GLUCOSE": glucose, "GENDER_MALE": gender_male, "GENDER_OTHER": gender_other,
             **patient_common(request.form),
         }
-        pdf = compile_latex("diabetes_report.tex", values, "diabetes")
+        pdf = compile_latex("diabeties_report.tex", values, "diabeties")
         conn = get_connection()
         cur = conn.execute(
             "INSERT INTO predictions(user_id,disease,prediction,input_data,created_at,report_path) VALUES(?,?,?,?,?,?)",
